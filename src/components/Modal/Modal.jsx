@@ -28,22 +28,7 @@ export function Modal({ children, onClose }) {
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [handleKeyDown]);
-
-  // ESC-Variant-2
-  // const handleKeyDown = e => {
-  //   if (e.code === 'Escape') {
-  //     onClose();
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener('keydown', handleKeyDown);
-
-  //   return () => {
-  //     window.removeEventListener('keydown', handleKeyDown);
-  //   };
-  // });
+  }, []);
 
   return createPortal(
     <Backdrop onClick={handleBackdropClick}>{children}</Backdrop>,
